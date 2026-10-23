@@ -1,7 +1,7 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { links } from "@/lib/links"
 
-const questions = [
+export const questions = [
   {
     q: "Is it free?",
     a: <>Yes. Proton-ish is free and open source under GPLv3, and Highball's engine is free too. CrossOver is optional and sold by CodeWeavers.</>,

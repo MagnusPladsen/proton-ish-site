@@ -1,0 +1,22 @@
+# Proton-ish
+
+> Steam Play for macOS. Proton-ish lets Windows games in the normal macOS Steam library run on an Apple Silicon Mac,
+> the way Proton does on Linux. Games run through Wine, with Highball's free Wine 11 engine or with CrossOver.
+> Free and open source (GPLv3).
+
+- Requirements: an Apple Silicon Mac with macOS 15 or newer, the Steam app for macOS, and Rosetta 2.
+- Install: `brew install --cask magnuspladsen/tap/proton-ish`, or download Proton-ish.zip from the latest release.
+- Use: open Proton-ish, set up Steam from its Status page, then pick a Highball or CrossOver engine under a game's
+  Properties → Compatibility in Steam and press Play.
+- Compatibility: most games that run in Highball or CrossOver run through Steam with Proton-ish. Check a game in
+  highball-db first. Kernel anti-cheat and Valve Anti-Cheat secure servers don't work.
+- Not affiliated with or endorsed by Valve, Apple, CodeWeavers or Highball.
+
+## Links
+
+- [Website](https://proton-ish.pladsen.dev/)
+- [Source code](https://github.com/MagnusPladsen/Proton-ish)
+- [Latest release](https://github.com/MagnusPladsen/Proton-ish/releases/latest)
+- [User guide](https://github.com/MagnusPladsen/Proton-ish/blob/main/docs/using-proton-ish.md)
+- [Changelog](https://github.com/MagnusPladsen/Proton-ish/blob/main/CHANGELOG.md)
+- [highball-db game compatibility database](https://gethighball.com/database/)

@@ -34,7 +34,9 @@ function AccordionContent({ className, children, ...props }: React.ComponentProp
   return (
     <AccordionPrimitive.Content
       data-slot="accordion-content"
-      className="overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+      // Closed answers stay in the page, hidden, so the prerendered HTML carries their text
+      forceMount
+      className="overflow-hidden text-sm data-[state=closed]:hidden data-[state=open]:animate-accordion-down"
       {...props}
     >
       <div className={cn("pt-0 pb-4", className)}>{children}</div>

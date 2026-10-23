@@ -15,9 +15,13 @@ const menu = [
   { label: "FAQ", href: "#faq" },
 ]
 
+// Starts empty so the prerendered page and the first render in the browser match
 function useClock() {
-  const [now, setNow] = useState(() => new Date())
+  const [now, setNow] = useState<Date | null>(null)
   useEffect(() => {
+    // The clock is the outside system here; reading it during render would differ from the prerendered page
+    // oxlint-disable-next-line react/set-state-in-effect
+    setNow(new Date())
     const timer = setInterval(() => setNow(new Date()), 15_000)
     return () => clearInterval(timer)
   }, [])
@@ -27,7 +31,7 @@ function useClock() {
 // The macOS menu bar: the app's name in bold, its menus, and the clock on the right
 export function MenuBar() {
   const now = useClock()
-  const clock = now.toLocaleString(undefined, { weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })
+  const clock = now?.toLocaleString(undefined, { weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })
 
   return (
     <header className="glass fixed inset-x-0 top-0 z-50 border-b border-white/5">

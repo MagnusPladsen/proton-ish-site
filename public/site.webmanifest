@@ -1,0 +1,14 @@
+{
+  "name": "Proton-ish",
+  "short_name": "Proton-ish",
+  "description": "Steam Play for macOS: Windows games in the Mac Steam library.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#0b0c12",
+  "theme_color": "#0b0c12",
+  "icons": [
+    { "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any" },
+    { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}
