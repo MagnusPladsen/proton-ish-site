@@ -3,7 +3,6 @@ import { Apple, Download, Gamepad2, Sparkles, Star } from "lucide-react"
 
 import { CopyCommand } from "@/components/copy-command"
 import { Logo } from "@/components/logo"
-import { MacWindow } from "@/components/mac-window"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { GitHubIcon } from "@/components/github-icon"
@@ -94,15 +93,15 @@ export function Hero() {
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
       >
-        <MacWindow title="Steam">
-          <img
-            src="/screens/game.webp"
-            width={1720}
-            height={1408}
-            alt="Emberward, a Windows game, running from the macOS Steam library through Proton-ish and Highball's Wine 11 engine"
-            className="block h-auto w-full"
-          />
-        </MacWindow>
+        {/* A full-window capture: macOS draws its own corners and traffic lights */}
+        <img
+          src="/screens/library.webp"
+          width={1719}
+          height={1409}
+          fetchPriority="high"
+          alt="The Witcher 3: Wild Hunt, a Windows-only game, in the Steam library on a Mac, ready to install and play with Proton-ish"
+          className="window-shadow block h-auto w-full rounded-xl"
+        />
 
         <motion.div
           className="glass absolute top-12 right-0 hidden w-80 rounded-2xl border border-white/10 p-3.5 text-left shadow-2xl sm:right-[-1rem] md:block"
@@ -114,11 +113,11 @@ export function Hero() {
             <Logo className="size-10 shrink-0" />
             <div className="min-w-0">
               <div className="flex items-center gap-1.5 text-xs text-foreground/60">
-                <span className="size-1.5 rounded-full bg-emerald-400" />
-                <span className="font-medium text-foreground/80">Now playing</span>
+                <span className="size-1.5 rounded-full bg-steam" />
+                <span className="font-medium text-foreground/80">In your Mac library</span>
               </div>
-              <p className="mt-0.5 text-sm font-semibold">Emberward</p>
-              <p className="text-xs text-foreground/70">Windows game · Highball Wine 11</p>
+              <p className="mt-0.5 text-sm font-semibold">The Witcher 3: Wild Hunt</p>
+              <p className="text-xs text-foreground/70">Windows game · ready for Steam Play</p>
             </div>
           </div>
         </motion.div>
