@@ -36,7 +36,8 @@ record your host gives you.
 - `src/components/ui/`: shadcn components.
 - `src/lib/links.ts`: every outside link in one place.
 - `public/screens/`: screenshots from the Proton-ish repo, as WebP. `public/og.jpg` is the social preview.
-- `public/app-icon.svg` (also the favicon) is the app's icon, drawn by `scripts/app-icon.py` from the geometry in
+- `public/app-icon.svg` (also `favicon.svg` and, rendered at 180 px, `apple-touch-icon.png`) is the app's icon,
+  a wine glass inside two orbits, drawn by `scripts/app-icon.py` from the geometry in
   Proton-ish's `helpers/icon.swift`. Rerun it if the app icon changes.
 
 The hero's version, GitHub stars and download count (`Proton-ish.zip` across all releases) come from GitHub's public

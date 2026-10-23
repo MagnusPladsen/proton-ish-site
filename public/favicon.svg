@@ -1,28 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="Proton-ish">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#1a8787"/>
-      <stop offset="1" stop-color="#0c454d"/>
+      <stop offset="0" stop-color="#2a2f6b"/>
+      <stop offset="1" stop-color="#120f2e"/>
     </linearGradient>
     <linearGradient id="sheen" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#fff" stop-opacity=".22"/>
       <stop offset=".5" stop-color="#fff" stop-opacity="0"/>
     </linearGradient>
-    <clipPath id="front"><rect x="-2048" y="-2048" width="4096" height="2054"/></clipPath>
-    <clipPath id="back"><rect x="-2048" y="-6" width="4096" height="2054"/></clipPath>
-    <mask id="behind-drop" maskUnits="userSpaceOnUse"><rect x="-2048" y="-2048" width="4096" height="4096" fill="#fff"/><path d="M512.00 736.60C556.10 648.40 638.00 566.50 638.00 472.00A126 126 0 0 0 386.00 472.00C386.00 566.50 467.90 648.40 512.00 736.60Z" fill="#000"/></mask>
-    <mask id="drop-cut" maskUnits="userSpaceOnUse"><rect x="-2048" y="-2048" width="4096" height="4096" fill="#fff"/><g transform="translate(512.0 512.0) rotate(35)"><ellipse rx="470" ry="150" fill="none" stroke="#000" stroke-width="84" clip-path="url(#front)"/></g><g transform="translate(512.0 512.0) rotate(-35)"><ellipse rx="470" ry="150" fill="none" stroke="#000" stroke-width="84" clip-path="url(#front)"/></g></mask>
-    <mask id="electron-cut" maskUnits="userSpaceOnUse"><rect x="-2048" y="-2048" width="4096" height="4096" fill="#fff"/><circle cx="862.23" cy="639.53" r="62" fill="#000"/></mask>
+    <linearGradient id="wine" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#ff4d6d"/>
+      <stop offset="1" stop-color="#a3001f"/>
+    </linearGradient>
+    <clipPath id="front"><rect x="-2048" y="-2048" width="4096" height="2610"/></clipPath>
+    <clipPath id="back"><rect x="-2048" y="550" width="4096" height="2048"/></clipPath>
+    <mask id="behind-glass" maskUnits="userSpaceOnUse"><rect x="-2048" y="-2048" width="4096" height="4096" fill="#fff"/><path d="M332.00 756.00H692.00C698.00 551.40 623.60 426.00 512.00 426.00C400.40 426.00 326.00 551.40 332.00 756.00Z" fill="none" stroke="#000" stroke-width="66" stroke-linejoin="round"/><rect x="479.00" y="236.00" width="66.00" height="190.00" fill="#000"/><rect x="366.00" y="203.00" width="292.00" height="66.00" rx="33.00" fill="#000"/><path d="M332.00 756.00H692.00C698.00 551.40 623.60 426.00 512.00 426.00C400.40 426.00 326.00 551.40 332.00 756.00Z" fill="#000"/></mask>
+    <mask id="front-cut" maskUnits="userSpaceOnUse"><rect x="-2048" y="-2048" width="4096" height="4096" fill="#fff"/><g clip-path="url(#front)"><ellipse cx="512.0" cy="556" rx="380" ry="118" transform="rotate(-24 512.0 556)" fill="none" stroke="#000" stroke-width="64"/></g><g clip-path="url(#front)"><ellipse cx="512.0" cy="556" rx="380" ry="118" transform="rotate(24 512.0 556)" fill="none" stroke="#000" stroke-width="64"/></g></mask>
     <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="-10" stdDeviation="14" flood-color="#00242a" flood-opacity=".45"/>
+      <feDropShadow dx="0" dy="-10" stdDeviation="14" flood-color="#05041a" flood-opacity=".5"/>
     </filter>
   </defs>
   <rect width="1024" height="1024" rx="229" fill="url(#bg)"/>
   <rect width="1024" height="1024" rx="229" fill="url(#sheen)"/>
-  <g transform="translate(512.0 512.0) scale(1.11171 -1.11171) translate(-512.0 -512.0)" fill="#fff" filter="url(#shadow)" opacity=".96">
-    <g mask="url(#behind-drop)"><g transform="translate(512.0 512.0) rotate(35)"><ellipse rx="470" ry="150" fill="none" stroke="#fff" stroke-width="40" clip-path="url(#back)"/></g><g transform="translate(512.0 512.0) rotate(-35)"><ellipse rx="470" ry="150" fill="none" stroke="#fff" stroke-width="40" clip-path="url(#back)"/></g></g>
-    <path d="M512.00 690.40C548.40 617.60 616.00 550.00 616.00 472.00A104 104 0 0 0 408.00 472.00C408.00 550.00 475.60 617.60 512.00 690.40Z" mask="url(#drop-cut)"/>
-    <g mask="url(#electron-cut)"><g transform="translate(512.0 512.0) rotate(35)"><ellipse rx="470" ry="150" fill="none" stroke="#fff" stroke-width="40" clip-path="url(#front)"/></g><g transform="translate(512.0 512.0) rotate(-35)"><ellipse rx="470" ry="150" fill="none" stroke="#fff" stroke-width="40" clip-path="url(#front)"/></g></g>
-    <circle cx="862.23" cy="639.53" r="40"/>
+  <g transform="translate(512.0 512.0) scale(1.06187 -1.06187) translate(-512.00 -496.00)" filter="url(#shadow)">
+    <g mask="url(#behind-glass)"><g clip-path="url(#back)"><ellipse cx="512.0" cy="556" rx="380" ry="118" transform="rotate(-24 512.0 556)" fill="none" stroke="#7dd3fc" stroke-width="32"/></g><g clip-path="url(#back)"><ellipse cx="512.0" cy="556" rx="380" ry="118" transform="rotate(24 512.0 556)" fill="none" stroke="#c4b5fd" stroke-width="32"/></g></g>
+    <g mask="url(#front-cut)"><path d="M336.81 617.40H687.19C687.19 514.33 620.00 430.00 512.00 430.00C404.00 430.00 336.81 514.33 336.81 617.40Z" fill="url(#wine)"/><path d="M332.00 756.00H692.00C698.00 551.40 623.60 426.00 512.00 426.00C400.40 426.00 326.00 551.40 332.00 756.00Z" fill="none" stroke="#fff" stroke-width="34" stroke-linejoin="round"/><rect x="495.00" y="236.00" width="34.00" height="190.00" fill="#fff"/><rect x="382.00" y="219.00" width="260.00" height="34.00" rx="17.00" fill="#fff"/></g>
+    <g clip-path="url(#front)"><ellipse cx="512.0" cy="556" rx="380" ry="118" transform="rotate(-24 512.0 556)" fill="none" stroke="#7dd3fc" stroke-width="32"/></g><g clip-path="url(#front)"><ellipse cx="512.0" cy="556" rx="380" ry="118" transform="rotate(24 512.0 556)" fill="none" stroke="#c4b5fd" stroke-width="32"/></g>
   </g>
 </svg>
