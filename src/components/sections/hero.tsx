@@ -1,5 +1,5 @@
 import { motion } from "motion/react"
-import { Apple, Download, Gamepad2, Sparkles, Star } from "lucide-react"
+import { Apple, Download, Eye, Gamepad2, Sparkles, Star } from "lucide-react"
 
 import { CopyCommand } from "@/components/copy-command"
 import { Logo } from "@/components/logo"
@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { GitHubIcon } from "@/components/github-icon"
 import { formatCount, useGitHubStats } from "@/hooks/use-github-stats"
+import { useVisits } from "@/hooks/use-visits"
 import { brewCommand, links } from "@/lib/links"
 
 const rise = {
@@ -16,6 +17,7 @@ const rise = {
 
 export function Hero() {
   const { version, stars, downloads } = useGitHubStats()
+  const visits = useVisits()
 
   return (
     <section id="top" className="relative overflow-hidden pt-28 pb-16 sm:pt-36">
@@ -61,7 +63,7 @@ export function Hero() {
           <li className="flex items-center gap-1.5"><Gamepad2 className="size-4" />Steam Cloud, overlay and Steam Input</li>
         </motion.ul>
 
-        {(stars !== null || downloads !== null) && (
+        {(stars !== null || downloads !== null || visits !== null) && (
           <motion.div
             className="mt-6 flex flex-wrap items-center justify-center gap-3"
             initial={{ opacity: 0, y: 8 }}
@@ -82,6 +84,13 @@ export function Hero() {
                 <span className="font-semibold tabular-nums">{formatCount(downloads)}</span>
                 <span className="text-muted-foreground">downloads</span>
               </a>
+            )}
+            {visits !== null && (
+              <span className="glass inline-flex items-center gap-2 rounded-full border border-white/10 px-3.5 py-1.5 text-sm">
+                <Eye className="size-3.5 text-violet" />
+                <span className="font-semibold tabular-nums">{formatCount(visits)}</span>
+                <span className="text-muted-foreground">visits</span>
+              </span>
             )}
           </motion.div>
         )}

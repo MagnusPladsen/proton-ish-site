@@ -5,7 +5,7 @@ Live at **https://proton-ish.pladsen.dev**.
 
 React 19, TypeScript, Vite, Tailwind CSS 4 and [shadcn/ui](https://ui.shadcn.com) (new-york style, Radix
 primitives), with [Motion](https://motion.dev) for the animations. It's one static page with no server and no analytics; the footer's
-visits badge comes from [hits.sh](https://hits.sh), which counts page loads.
+hero's visits count comes from [Abacus](https://abacus.jasoncameron.dev), a free counter API.
 
 ## Develop
 
@@ -56,7 +56,9 @@ record your host gives you.
   Proton-ish's `helpers/icon.swift`. Rerun it if the app icon changes.
 
 The hero's version, GitHub stars and download count (`Proton-ish.zip` across all releases) come from GitHub's public
-API in the visitor's browser (`src/hooks/use-github-stats.ts`); each is left out when GitHub doesn't answer. The Download buttons always point at the newest release's `Proton-ish.zip`.
+API in the visitor's browser (`src/hooks/use-github-stats.ts`); each is left out when GitHub doesn't answer.
+The visits count (`src/hooks/use-visits.ts`) adds one per browser session through Abacus and only reads the count on
+localhost; it's left out when Abacus doesn't answer. The Download buttons always point at the newest release's `Proton-ish.zip`.
 
 ## Content
 

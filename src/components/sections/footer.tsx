@@ -1,11 +1,10 @@
-import { useState } from "react"
 import { Download } from "lucide-react"
 
 import { GitHubIcon } from "@/components/github-icon"
 import { Logo } from "@/components/logo"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
-import { links, visitsBadge, visitsPage } from "@/lib/links"
+import { links } from "@/lib/links"
 
 const columns = [
   {
@@ -31,8 +30,6 @@ const columns = [
 ]
 
 export function Footer() {
-  // A counter that can't be reached leaves no broken image behind
-  const [visitsShown, setVisitsShown] = useState(true)
   return (
     <footer className="relative mt-12 pb-32">
       <div className="mx-auto max-w-6xl px-4">
@@ -55,11 +52,6 @@ export function Footer() {
           <div>
             <a href="#top" className="flex items-center gap-2 font-semibold"><Logo className="size-6" />Proton-ish</a>
             <p className="mt-3 max-w-xs text-sm text-muted-foreground">Steam Play for macOS. Free and open source under GPLv3.</p>
-            {visitsShown && (
-              <a href={visitsPage} className="mt-4 inline-block opacity-80 transition hover:opacity-100" aria-label="Page visits, counted by hits.sh">
-                <img src={visitsBadge} alt="Page visits" height={20} className="h-5 w-auto" onError={() => setVisitsShown(false)} />
-              </a>
-            )}
           </div>
           {columns.map((column) => (
             <div key={column.title}>
