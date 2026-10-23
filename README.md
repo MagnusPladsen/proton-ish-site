@@ -4,7 +4,8 @@ The website for [Proton-ish](https://github.com/MagnusPladsen/Proton-ish), Steam
 Live at **https://proton-ish.pladsen.dev**.
 
 React 19, TypeScript, Vite, Tailwind CSS 4 and [shadcn/ui](https://ui.shadcn.com) (new-york style, Radix
-primitives), with [Motion](https://motion.dev) for the animations. It's one static page: no server, no tracking.
+primitives), with [Motion](https://motion.dev) for the animations. It's one static page with no server and no analytics; the footer's
+visits badge comes from [hits.sh](https://hits.sh), which counts page loads.
 
 ## Develop
 
@@ -35,9 +36,11 @@ record your host gives you.
 - `src/components/ui/`: shadcn components.
 - `src/lib/links.ts`: every outside link in one place.
 - `public/screens/`: screenshots from the Proton-ish repo, as WebP. `public/og.jpg` is the social preview.
+- `public/app-icon.svg` (also the favicon) is the app's icon, drawn by `scripts/app-icon.py` from the geometry in
+  Proton-ish's `helpers/icon.swift`. Rerun it if the app icon changes.
 
-The latest version shown in the hero comes from the GitHub releases API in the visitor's browser; the page works
-without it. The Download buttons always point at the newest release's `Proton-ish.zip`.
+The hero's version, GitHub stars and download count (`Proton-ish.zip` across all releases) come from GitHub's public
+API in the visitor's browser (`src/hooks/use-github-stats.ts`); each is left out when GitHub doesn't answer. The Download buttons always point at the newest release's `Proton-ish.zip`.
 
 ## Content
 

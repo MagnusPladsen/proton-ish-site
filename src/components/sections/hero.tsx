@@ -1,12 +1,13 @@
 import { motion } from "motion/react"
-import { Apple, Download, Gamepad2, Sparkles } from "lucide-react"
+import { Apple, Download, Gamepad2, Sparkles, Star } from "lucide-react"
 
 import { CopyCommand } from "@/components/copy-command"
 import { Logo } from "@/components/logo"
 import { MacWindow } from "@/components/mac-window"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { useLatestRelease } from "@/hooks/use-latest-release"
+import { GitHubIcon } from "@/components/github-icon"
+import { formatCount, useGitHubStats } from "@/hooks/use-github-stats"
 import { brewCommand, links } from "@/lib/links"
 
 const rise = {
@@ -15,7 +16,7 @@ const rise = {
 }
 
 export function Hero() {
-  const version = useLatestRelease()
+  const { version, stars, downloads } = useGitHubStats()
 
   return (
     <section id="top" className="relative overflow-hidden pt-28 pb-16 sm:pt-36">
@@ -60,6 +61,31 @@ export function Hero() {
           <li className="flex items-center gap-1.5"><Sparkles className="size-4" />Free and open source</li>
           <li className="flex items-center gap-1.5"><Gamepad2 className="size-4" />Steam Cloud, overlay and Steam Input</li>
         </motion.ul>
+
+        {(stars !== null || downloads !== null) && (
+          <motion.div
+            className="mt-6 flex flex-wrap items-center justify-center gap-3"
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+          >
+            {stars !== null && (
+              <a href={links.repo} className="glass inline-flex items-center gap-2 rounded-full border border-white/10 px-3.5 py-1.5 text-sm transition hover:border-white/25">
+                <GitHubIcon className="size-4" />
+                <Star className="size-3.5 fill-amber-300 text-amber-300" />
+                <span className="font-semibold tabular-nums">{formatCount(stars)}</span>
+                <span className="text-muted-foreground">stars</span>
+              </a>
+            )}
+            {downloads !== null && (
+              <a href={links.releases} className="glass inline-flex items-center gap-2 rounded-full border border-white/10 px-3.5 py-1.5 text-sm transition hover:border-white/25">
+                <Download className="size-3.5 text-steam" />
+                <span className="font-semibold tabular-nums">{formatCount(downloads)}</span>
+                <span className="text-muted-foreground">downloads</span>
+              </a>
+            )}
+          </motion.div>
+        )}
       </motion.div>
 
       <motion.div
@@ -85,9 +111,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="flex items-start gap-3">
-            <div className="grid size-10 shrink-0 place-items-center rounded-[10px] bg-gradient-to-b from-[#2a2d3a] to-[#14151b] ring-1 ring-white/10">
-              <Logo className="size-7" />
-            </div>
+            <Logo className="size-10 shrink-0" />
             <div className="min-w-0">
               <div className="flex items-center gap-1.5 text-xs text-foreground/60">
                 <span className="size-1.5 rounded-full bg-emerald-400" />

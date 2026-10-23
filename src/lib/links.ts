@@ -20,4 +20,9 @@ export const links = {
   steamMac: "https://store.steampowered.com/about/",
 }
 
+// Counts page loads; hits.sh draws the number as a badge
+export const visitsBadge =
+  "https://hits.sh/proton-ish.pladsen.dev.svg?style=flat-square&label=visits&color=1a8787&labelColor=1b1d26"
+export const visitsPage = "https://hits.sh/proton-ish.pladsen.dev/"
+
 export const brewCommand = "brew install --cask magnuspladsen/tap/proton-ish"
