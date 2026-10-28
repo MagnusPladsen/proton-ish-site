@@ -30,7 +30,7 @@ const features: Feature[] = [
   {
     icon: Wrench,
     title: "Per-game fixes, built in",
-    body: "Every game runs with Highball's own launch settings and the fixes from highball-db, which arrive with each update.",
+    body: "Every game runs with Highball's own launch settings and the fixes from highball-db, which arrive with each update. Need more? Winetricks is built into the app.",
     tint: "from-amber-400/25",
     wide: true,
   },
