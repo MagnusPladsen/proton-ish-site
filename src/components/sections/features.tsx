@@ -1,6 +1,6 @@
 import { motion } from "motion/react"
 import type { LucideIcon } from "lucide-react"
-import { ArrowLeftRight, Cloud, Gamepad2, RefreshCw, Sparkles, Wrench } from "lucide-react"
+import { ArrowLeftRight, Cloud, Gamepad2, RefreshCw, SlidersHorizontal, Sparkles, Wrench } from "lucide-react"
 
 import { Card } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
@@ -45,7 +45,12 @@ const features: Feature[] = [
     title: "Updates itself",
     body: "Check for Updates in the app, or brew upgrade. Engines and game fixes arrive the same way.",
     tint: "from-emerald-400/25",
-    wide: true,
+  },
+  {
+    icon: SlidersHorizontal,
+    title: "Settings per game",
+    body: "Each game's Compatibility page in Steam holds its own options: the graphics backend, MetalFX upscaling, a frame rate limit, and which executable to launch.",
+    tint: "from-steam/30",
   },
 ]
 
