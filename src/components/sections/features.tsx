@@ -11,7 +11,7 @@ const features: Feature[] = [
   {
     icon: Gamepad2,
     title: "Your library, as it is",
-    body: "Windows games sit next to your Mac games and start with Steam's own Play button. No second launcher, no second library.",
+    body: "Windows games sit next to your Mac games and start with Steam's own Play button, or from macOS's Games app once you've played them. No second launcher, no second library.",
     tint: "from-steam/30",
     wide: true,
   },
