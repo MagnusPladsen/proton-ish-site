@@ -30,7 +30,7 @@ const features: Feature[] = [
   {
     icon: Wrench,
     title: "Per-game fixes, built in",
-    body: "Every game runs with Highball's own launch settings and the fixes from highball-db, which arrive with each update. Need more? Winetricks is built into the app.",
+    body: "Every game runs with Highball's own launch settings and the fixes from highball-db, which arrive with each update. Need more? Winetricks and Wine's Game Controllers window are built into the app.",
     tint: "from-amber-400/25",
     wide: true,
   },
@@ -49,7 +49,7 @@ const features: Feature[] = [
   {
     icon: SlidersHorizontal,
     title: "Settings per game",
-    body: "Each game's Compatibility page in Steam holds its own options: the graphics backend, MetalFX upscaling, a frame rate limit, and which executable to launch.",
+    body: "Each game's Compatibility page in Steam holds its own options: the graphics backend, MetalFX upscaling, a frame rate limit, which executable to launch, and a DPI fix for games stuck at low resolutions.",
     tint: "from-steam/30",
   },
 ]
